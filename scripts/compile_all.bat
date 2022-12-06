@@ -1,21 +1,21 @@
 @ECHO off
 
-:: ÉèÖÃ±êÌâ  ¾ÅÁãÒ» Æğ  Íæwww.90   175.com
+:: è®¾ç½®æ ‡é¢˜  ä¹é›¶ä¸€ èµ·  ç©www.90   175.com
 TITLE compile_all
 
 CD ..
 SET root=%cd%
 
-ECHO "¿ªÊ¼±àÒë·şÎñ¶Ë´úÂë ..."
+ECHO "å¼€å§‹ç¼–è¯‘æœåŠ¡ç«¯ä»£ç  ..."
 CALL rebar3 compile
-ECHO "Íê³É±àÒë·şÎñ¶Ë´úÂë !!"
+ECHO "å®Œæˆç¼–è¯‘æœåŠ¡ç«¯ä»£ç  !!"
 
 SET from=%root%\_build\default\lib\
 SET game=%root%\ebin\
 SET deps=%root%\ebin_deps\
 
 CD %from%
-ECHO "¿ªÊ¼¸´ÖÆ beam ..."
+ECHO "å¼€å§‹å¤åˆ¶ beam ..."
 FOR /D %%i IN (*) DO (
 	IF "%%i" neq "vtnemo" (
 		XCOPY /S/E/Y/Q "%from%%%i\ebin\*.*" "%deps%"
@@ -23,7 +23,7 @@ FOR /D %%i IN (*) DO (
 		XCOPY /S/E/Y/Q "%from%%%i\ebin\*.*" "%game%"
 	)
 )
-ECHO "Íê³É¸´ÖÆ beam !!"
+ECHO "å®Œæˆå¤åˆ¶ beam !!"
 IF EXIST %root%\tmp RD /Q/S %root%\tmp
 
 ECHO "Compile all finished !!!"

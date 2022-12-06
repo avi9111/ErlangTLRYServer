@@ -26,6 +26,7 @@
 %% =============================================================================
 
 start_link() ->
+lager:error("vtnemo super link()"),
     supervisor:start_link({local, ?SERVER}, ?MODULE, []).
 
 %% =============================================================================
@@ -33,6 +34,7 @@ start_link() ->
 %% =============================================================================
 
 init([]) ->
+lager:error("vtnemo init()"),
     SupFlags = {one_for_one, 1000, 3600},
 %%    Children = [
 %%        {auto_hot, {auto_hot, start_link, []},

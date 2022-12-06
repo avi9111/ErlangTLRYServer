@@ -24,7 +24,7 @@
 %% =============================================================================
 
 start(_StartType, _StartArgs) ->
-lager:error("vtnemo Start() ip="),
+lager:error("vtnemo Start() 111 ip="),
     case vtnemo_sup:start_link() of
         {ok, Pid} ->
             start_node(),
@@ -45,7 +45,7 @@ stop(_State) ->
 %% =============================================================================
 
 start_node() ->
-lager:error("vtnemo Start_node() ip="),
+lager:error("vtnemo Start_node() 222 ip="),
     [NodeIDStr | _] = init:get_plain_arguments(),
     NodeID = list_to_integer(NodeIDStr),
     if

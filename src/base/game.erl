@@ -17,18 +17,22 @@
 -include("log.hrl").
 -define(APP, vtnemo).
 % -define(APPS, [lager,kernel, stdlib, sasl, goldrush,  mysql_poolboy, ?APP]).
--define(APPS,[lager,?APP]).
-
+-define(APPS,[lager]).
+-define(AP,[vtnemo]).
 %% @doc 启动游戏
 start() ->
     preload_codes(),
     start_apps(?APPS),
+    lager:error("___...."),
+    start_apps(?AP),
     lager:error("必须保证前面mysql(in ?APPS)初始化成功，才有这行打印fffffffffffff try lager log in Erlang...."),
     ok.
 
 start_apps([]) ->
+    lager:error("start_apps(+) empty??"),
     ok;
 start_apps([App | T]) ->
+    lager:error("p==112"),
     application:ensure_all_started(App),
     start_apps(T).
 
