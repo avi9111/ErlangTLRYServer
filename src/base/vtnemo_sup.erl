@@ -8,7 +8,7 @@
 -module(vtnemo_sup).
 
 -behaviour(supervisor).
-
+-include("common.hrl").
 %% API
 -export([
     start_link/0
@@ -26,7 +26,7 @@
 %% =============================================================================
 
 start_link() ->
-lager:error("vtnemo super link()"),
+lager:error("vtnemo _build_copy_super link()"),
     supervisor:start_link({local, ?SERVER}, ?MODULE, []).
 
 %% =============================================================================
@@ -34,7 +34,7 @@ lager:error("vtnemo super link()"),
 %% =============================================================================
 
 init([]) ->
-lager:error("vtnemo init()"),
+lager:error("vtnemo _build_copy_init()"),
     SupFlags = {one_for_one, 1000, 3600},
 %%    Children = [
 %%        {auto_hot, {auto_hot, start_link, []},

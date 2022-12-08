@@ -24,7 +24,7 @@
 %% =============================================================================
 
 start(_StartType, _StartArgs) ->
-lager:error("vtnemo Start() 111 ip="),
+lager:error("vtnemo Start() n=111 ip="),
     case vtnemo_sup:start_link() of
         {ok, Pid} ->
             start_node(),
